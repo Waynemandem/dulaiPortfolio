@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulai Films - Videographer</title>
+    <link rel="stylesheet" href="dulai.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav>
+        <div class="logo">DULAI FILMS</div>
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div class="theme-toggle" id="themeToggle">
+                <div class="theme-toggle-circle"></div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!---Hero section-->
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="assets/dulai.1.mp4 " type="video/mp4">
+            Your browser does not support the video tag
+        </video>
+        <div class="hero-content">
+            <h1>VISUAL STORYTELLER</h1>
+            <p>Crafting Cinematic experience that moves People!</p>
+            <a href="#work" class="cta-button">View My Work</a>
+        </div>   
+    </section>
+
+    <!---work section-->
+    <section class="work" id="work">
+        <h2 class="section-title">FEATURED WORK</h2>
+        <div class="video-grid">
+
+            <div class="video-card">
+                <img src="assets/dulai2.jpg" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Drone Photography</div>
+                    <div class="video-category">Our Work</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                 <img src="assets/dulai-img1.jpg" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Real Estate</div>
+                    <div class="video-category">Drone</div>
+                </div>
+            </div>
+
+            <div class="video-card"> 
+                 <img src="assets/photo_2025-12-27_20-29-31.jpg" alt="">
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                 <video autoplay muted loop playsinline>
+            <source src="assets/dulai.1.mp4 " type="video/mp4">
+                 </video>
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                 <video autoplay muted loop playsinline>
+            <source src="assets/dulai3.mp4 " type="video/mp4">
+                 </video>
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                 <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                 <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+             <div class="video-card">
+                 <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery section -->
+     <section class="gallery">
+        <div class="gallery-section" id="gallerySection">
+            <div class="photo-card">
+                <img src="assets/photo_2025-12-27_20-29-31.jpg" alt="">
+                <div class="video-title"></div>
+                <div class="video-category"></div>
+            </div>
+        </div>
+        <div class="photo-card">
+                <img src="assets/dulai-img1.jpg" alt="">
+                <div class="video-title"></div>
+                <div class="video-category"></div>
+            </div>
+        </div>
+     </section>
+
+    <!--About section-->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+            <br>
+                <p>Dulai Films is a media company focused on real estate and tourism creative media. 
+                    A brand that has consistently improved the brand perception of top companies through creative visuals storytelling.</p>
+                <p>From commercial campaigns to initimate</p>
+            </div>
+            <div class="about-image">
+                <img src="" alt="">
+            </div>
+        </div>
+    </section>
+<br><br>
+    <!-- Contact section-->
+     <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Let's Create Tegether</h2>
+        <br>
+            <p>Have a project in mind? I'd love to hear about it and bring your vision to life.</p>
+        </div>
+        <a href="dulaifilms@gmail.com" class="cta-button">Get In Touch</a>
+        <div class="social-links">
+            <a href="@dulai_films">instagram</a>
+            <a href="@dulai_films">tiktok</a>
+            <a href="@dulaifilms">YouTube</a>
+            <a href="#">LINKEDIN</a>
+        </div>
+     </section>
+
+     <footer class="footer">
+          © DULAI FILMS LIMITED . AJAH, LAGOS
+     </footer>
+     <script>
+        //theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // check for saved theme preference or default theme
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            body.classList.add('light-theme');
+            themeToggle.classList.add('active');
+        }
+
+        //Toggle theme on Click
+        themeToggle.addEventListener(  'click', () => 
+           body.classList.toggle('light-theme'), 
+           themeToggle.classList.toggle('active');
+        // Save preference 
+        const theme = body.classList.contains('light-theme') ? 'light' : 'dark'; 
+        localStorage.setItem('theme', theme);
+        );
+
+     </script>
+
+    
+</body>
+</html>
