@@ -14,21 +14,32 @@
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-            <div class="theme-toggle" id="themeToggle">
-                <div class="theme-toggle-circle"></div>
-            </div>
+            <button 
+                class="theme-toggle" 
+                id="themeToggle"
+                aria-label="Toggle dark and light theme"
+                aria-pressed="false"
+                title="Toggle theme">
+            </button>
         </div>
     </nav>
 
 
     <!---Hero section-->
     <section class="hero">
-        <video autoplay muted loop playsinline>
-            <source src="assets/dulai.1.mp4 " type="video/mp4">
-            Your browser does not support the video tag
-        </video>
+         <div class="hero-video">
+                <iframe 
+                    src="https://player.vimeo.com/video/1149467376?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    title="dulai.1">
+                </iframe>
+                <div class="video-title">Cinematic Storytelling</div>
+                <div class="video-category">Vimeo Embed</div>
+            </div>
         <div class="hero-content">
-            <h1>VISUAL STORYTELLER</h1>
+            <h1>FILM/VIDEO PRODUCTION COMPANY</h1>
             <p>Crafting Cinematic experience that moves People!</p>
             <a href="#work" class="cta-button">View My Work</a>
         </div>   
@@ -112,17 +123,19 @@
 
     <!-- Gallery section -->
      <section class="gallery">
-        <div class="gallery-section" id="gallerySection">
-            <div class="photo-card">
-                <img src="assets/photo_2025-12-27_20-29-31.jpg" alt="">
-                <div class="video-title"></div>
-                <div class="video-category"></div>
-            </div>
-        </div>
-        <div class="photo-card">
-                <img src="assets/dulai-img1.jpg" alt="">
-                <div class="video-title"></div>
-                <div class="video-category"></div>
+        <h2>Gallery</h2>
+        <br>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <iframe 
+                    src="https://player.vimeo.com/video/1149467376?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    title="dulai.1">
+                </iframe>
+                <div class="video-title">Cinematic Storytelling</div>
+                <div class="video-category">Vimeo Embed</div>
             </div>
         </div>
      </section>
@@ -133,12 +146,11 @@
             <div class="about-text">
                 <h2>About Me</h2>
             <br>
-                <p>Dulai Films is a media company focused on real estate and tourism creative media. 
-                    A brand that has consistently improved the brand perception of top companies through creative visuals storytelling.</p>
+                <p>Dulai Films is a creative media production company focused on real estate and tourism. We work closely with brands to tell their stories through powerful visuals that feel authentic and intentional. Our goal is simple: help brands stand out, earn trust, and connect with the right audience. From full-scale commercial campaigns to intimate, story-driven productions, everything we create is designed to communicate real value and move people to act.</p>
                 <p>From commercial campaigns to initimate</p>
             </div>
             <div class="about-image">
-                <img src="" alt="">
+                <img src="assets/photo_2025-12-27_20-29-46.jpg" alt="">
             </div>
         </div>
     </section>
@@ -148,41 +160,155 @@
         <div class="contact-content">
             <h2>Let's Create Tegether</h2>
         <br>
-            <p>Have a project in mind? I'd love to hear about it and bring your vision to life.</p>
+            <p>Have a project in mind? I'd love to hear about it and bring your vision to life with our high-quality productions.</p>
         </div>
         <a href="dulaifilms@gmail.com" class="cta-button">Get In Touch</a>
         <div class="social-links">
-            <a href="@dulai_films">instagram</a>
-            <a href="@dulai_films">tiktok</a>
-            <a href="@dulaifilms">YouTube</a>
-            <a href="#">LINKEDIN</a>
+            <a href="https://www.instagram.com/dulai_films/">Instagram</a>
+            <a href="https://www.tiktok.com/dulai_films">TikTok</a>
+            <a href="https://www.youtube.com/dulaifilms">YouTube</a>
+            <a href="https://www.linkedin.com/dulai_films">LINKEDIN</a>
         </div>
      </section>
+
+     <!-- Contact Form -->
+      <section class="contact-form">
+        <form action="" id="contactForm">
+            <div class="form-group">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Phone">Phone</label>
+                <input type="tel" id="Phone" name="Phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="projectType">Project type</label>
+                <select id="projectType" name="projectType" required>
+                    <option value="">Select a project type</option>
+                    <option value="real-estate">Real estate</option>
+                    <option value="tourism">Tourism</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="corporate">Corporate Video</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="budget">Budget range</label>
+                <select id="budget" name="budget">
+                    <option value="">Select Budget</option>
+                    <option value="under-500k">Under 500,000</option>
+                    <option value="500k-1m">#500,000 - #1,000,000</option>
+                    <option value="1m-2m">#1,000,000 - #2,000,000</option>
+                    <option value="2m-plus">#2,000,000+</option>
+                </select>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="message">Project Details</label>
+                <textarea name="message" id="messgae" required placeholder="Tell us about your project"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send message</button>
+        </form>
+      </section>
 
      <footer class="footer">
           © DULAI FILMS LIMITED . AJAH, LAGOS
      </footer>
      <script>
-        //theme Toggle Functionality
+        /* ===================================
+           Theme Toggle Functionality
+           Manages dark/light mode switching
+           Persists preference using localStorage
+           ==================================== */
+
+        // Get DOM elements
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
 
-        // check for saved theme preference or default theme
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        if (currentTheme === 'light') {
-            body.classList.add('light-theme');
-            themeToggle.classList.add('active');
+        // Initialize theme on page load
+        const initializeTheme = () => {
+            // Check for saved theme preference or default to dark
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            
+            if (savedTheme === 'light') {
+                body.classList.add('light-theme');
+                themeToggle.classList.add('active');
+                themeToggle.setAttribute('aria-pressed', 'true');
+            } else {
+                // Ensure dark mode is set
+                body.classList.remove('light-theme');
+                themeToggle.classList.remove('active');
+                themeToggle.setAttribute('aria-pressed', 'false');
+            }
+        };
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Allow toggle via keyboard (Enter or Space)
+        themeToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+
+        function toggleTheme() {
+            // Toggle light-theme class on body
+            body.classList.toggle('light-theme');
+            themeToggle.classList.toggle('active');
+
+            // Determine current theme
+            const isLightTheme = body.classList.contains('light-theme');
+
+            // Update aria-pressed for accessibility
+            themeToggle.setAttribute('aria-pressed', isLightTheme.toString());
+
+            // Save preference to localStorage
+            const theme = isLightTheme ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+
+            // Optional: Log for debugging
+            console.log(`Theme switched to: ${theme}`);
         }
 
-        //Toggle theme on Click
-        themeToggle.addEventListener(  'click', () => 
-           body.classList.toggle('light-theme'), 
-           themeToggle.classList.toggle('active');
-        // Save preference 
-        const theme = body.classList.contains('light-theme') ? 'light' : 'dark'; 
-        localStorage.setItem('theme', theme);
-        );
+        // Initialize theme when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeTheme);
+        } else {
+            initializeTheme();
+        }
 
+        /* Contact form functionality */
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', function(e) { 
+           e.preventDefault();
+           
+           // Get form data
+           const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            projectType: document.getElementById('projectType').value,
+            budget: document.getElementById('budget').value,
+            message: document.getElementById('message').value,
+           };  
+
+        } ) 
      </script>
 
     
