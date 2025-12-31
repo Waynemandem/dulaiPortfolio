@@ -9,11 +9,27 @@
 <body>
     <!-- navigation -->
     <nav>
-        <div class="logo">DULAI FILMS</div>
-        <div class="nav-links">
+        <div class="logo">
+            <img src="assets/dulai-logo.png" alt="Dulai Films Logo">
+        </div>
+        <!-- Hamburger menu button - visible on mobile only -->
+        <button 
+            class="hamburger" 
+            id="hamburgerBtn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            <!-- Hamburger icon with animated bars -->
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <!-- Navigation links container - toggles with hamburger on mobile -->
+        <div class="nav-links" id="navLinks">
             <a href="#work">Work</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
+            <!-- Theme toggle button with sun/moon icons -->
             <button 
                 class="theme-toggle" 
                 id="themeToggle"
@@ -22,26 +38,19 @@
                 title="Toggle theme">
             </button>
         </div>
-    </nav>
+    </nav>   
 
 
     <!---Hero section-->
     <section class="hero">
-         <div class="hero-video">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149467376?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="dulai.1">
-                </iframe>
-                <div class="video-title">Cinematic Storytelling</div>
-                <div class="video-category">Vimeo Embed</div>
-            </div>
+         <video class="hero-video" autoplay loop muted playsinline>
+            <source src="assets/video_2025-12-31_03-53-30.mp4" type="video/mp4" lazyload="eager">
+               Your browser does not support the video tag.
+         </video>
         <div class="hero-content">
             <h1>FILM/VIDEO PRODUCTION COMPANY</h1>
             <p>Crafting Cinematic experience that moves People!</p>
-            <a href="#work" class="cta-button">View My Work</a>
+            <a href="works.html" class="cta-button">View My Work</a>
         </div>   
     </section>
 
@@ -85,9 +94,7 @@
             </div>
 
             <div class="video-card">
-                 <video autoplay muted loop playsinline>
-            <source src="assets/dulai3.mp4 " type="video/mp4">
-                 </video>
+                <img src="assets/vlcsnap-2025-12-29-20h38m40s538.png" alt="">
                 <div class="video-overlay">
                     <div class="video-title"></div>
                     <div class="video-category"></div>
@@ -95,27 +102,15 @@
             </div>
 
             <div class="video-card">
-                 <img src="" alt="">
+                 <img src="assets/vlcsnap-2025-12-29-20h40m42s024.png" alt="">
                 <div class="video-overlay">
                     <div class="video-title"></div>
                     <div class="video-category"></div>
                 </div>
             </div>
 
-            <div class="video-card">
-                 <img src="" alt="">
-                <div class="video-overlay">
-                    <div class="video-title"></div>
-                    <div class="video-category"></div>
-                </div>
-            </div>
-
-             <div class="video-card">
-                 <img src="" alt="">
-                <div class="video-overlay">
-                    <div class="video-title"></div>
-                    <div class="video-category"></div>
-                </div>
+            <div class="see-more-wrapper">
+               <a href="works.html" class="see-more-btn">See More of My Work</a>
             </div>
 
         </div>
@@ -137,6 +132,18 @@
                 <div class="video-title">Cinematic Storytelling</div>
                 <div class="video-category">Vimeo Embed</div>
             </div>
+            <div class="gallery-item">
+                <iframe 
+                src="https://player.vimeo.com/video/1149465491?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                title="dulai7">
+            </iframe>
+                <div class="video-title">Real Estate Videography</div>
+                <div class="video-category">Vimeo Embed</div>
+            </div>
+            
         </div>
      </section>
 
@@ -146,23 +153,97 @@
             <div class="about-text">
                 <h2>About Me</h2>
             <br>
-                <p>Dulai Films is a creative media production company focused on real estate and tourism. We work closely with brands to tell their stories through powerful visuals that feel authentic and intentional. Our goal is simple: help brands stand out, earn trust, and connect with the right audience. From full-scale commercial campaigns to intimate, story-driven productions, everything we create is designed to communicate real value and move people to act.</p>
-                <p>From commercial campaigns to initimate</p>
+            <p>Dulai Films is a creative media production company focused on real estate 
+                    and tourism. We work closely with brands to tell their stories through 
+                    powerful visuals that feel authentic and intentional. 
+                    Our goal is simple: help brands stand out, earn trust, and 
+                    connect with the right audience. From full-scale commercial campaigns 
+                    to intimate, story-driven productions, everything we create is designed 
+                    to communicate real value and move people to act.</p>
+            
+            <!-- Service specialization button group - interactive filter options -->
+            <div class="about-filter-wrapper">
+                <label class="about-label">Our Specializations:</label>
+                <div class="about-options-group" role="group" aria-label="Service specialization options">
+                    <button class="about-option-btn active" data-service="all" aria-pressed="true">
+                        All Services
+                    </button>
+                    <button class="about-option-btn" data-service="real-estate" aria-pressed="false">
+                        Real Estate Videography
+                    </button>
+                    <button class="about-option-btn" data-service="tourism" aria-pressed="false">
+                        Tourism & Travel
+                    </button>
+                    <button class="about-option-btn" data-service="commercial" aria-pressed="false">
+                        Commercial Productions
+                    </button>
+                    <button class="about-option-btn" data-service="corporate" aria-pressed="false">
+                        Corporate Videos
+                    </button>
+                    <button class="about-option-btn" data-service="drone" aria-pressed="false">
+                        Drone Photography
+                    </button>
+                </div>
             </div>
-            <div class="about-image">
-                <img src="assets/photo_2025-12-27_20-29-46.jpg" alt="">
+            </div>
+            <!-- Image container with modern styling and expansion capability -->
+            <div class="about-image-wrapper">
+                <div class="about-image">
+                    <img 
+                        id="aboutImage"
+                        src="assets/photo_2025-12-27_20-29-46.jpg" 
+                        alt="Dulai Films production team at work"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Click to expand image"
+                        style="cursor: pointer;">
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Image Expansion Modal Overlay -->
+    <div 
+        id="imageModal" 
+        class="image-modal"
+        role="dialog"
+        aria-label="Expanded image view"
+        aria-hidden="true">
+        <!-- Semi-transparent dark background -->
+        <div class="image-modal-backdrop"></div>
+        
+        <!-- Modal content container -->
+        <div class="image-modal-content">
+            <!-- Expanded image -->
+            <img 
+                id="expandedImage"
+                src="assets/photo_2025-12-27_20-29-46.jpg" 
+                alt="Dulai Films production team at work - expanded view"
+                class="image-modal-img">
+            
+            <!-- Close button in top-right corner -->
+            <button 
+                id="imageModalClose"
+                class="image-modal-close"
+                aria-label="Close image"
+                title="Close (Esc)">
+                <!-- SVG close icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
 <br><br>
     <!-- Contact section-->
      <section class="contact" id="contact">
         <div class="contact-content">
-            <h2>Let's Create Tegether</h2>
+            <h2>Let's Create Together</h2>
         <br>
             <p>Have a project in mind? I'd love to hear about it and bring your vision to life with our high-quality productions.</p>
         </div>
-        <a href="dulaifilms@gmail.com" class="cta-button">Get In Touch</a>
+        <a href="mailto:dulaifilms@gmail.com" class="cta-button">Get In Touch</a>
         <div class="social-links">
             <a href="https://www.instagram.com/dulai_films/">Instagram</a>
             <a href="https://www.tiktok.com/dulai_films">TikTok</a>
@@ -171,27 +252,37 @@
         </div>
      </section>
 
-     <!-- Contact Form -->
+     <!-- Contact Form Section with Title & Subtitle -->
       <section class="contact-form">
-        <form action="" id="contactForm">
+        <!-- Form title for clear purpose communication -->
+        <div class="form-header">
+            <h3 class="form-title">Tell Us About Your Project</h3>
+            <p class="form-subtitle">Share the details of what you're looking to create, and we'll get back to you shortly with ideas and options.</p>
+        </div>
+        <!-- Form with improved semantics and accessibility -->
+        <form action="" id="contactForm" novalidate>
+            <!-- Name field with accessibility label -->
             <div class="form-group">
                 <label for="name">Your name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required aria-label="Your full name" aria-required="true">
             </div>
             
+            <!-- Email field with accessibility label -->
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required aria-label="Your email address" aria-required="true">
             </div>
             
+            <!-- Phone input with consistent ID casing for JavaScript compatibility -->
             <div class="form-group">
-                <label for="Phone">Phone</label>
-                <input type="tel" id="Phone" name="Phone">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" aria-label="Your phone number">
             </div>
             
+            <!-- Quick project category selector -->
             <div class="form-group">
-                <label for="projectType">Project type</label>
-                <select id="projectType" name="projectType" required>
+                <label for="projectType">Project Category</label>
+                <select id="projectType" name="projectType" required aria-label="Select your project category">
                     <option value="">Select a project type</option>
                     <option value="real-estate">Real estate</option>
                     <option value="tourism">Tourism</option>
@@ -201,10 +292,10 @@
                 </select>
             </div>
 
-            
+            <!-- Budget range selector for project planning -->
             <div class="form-group">
                 <label for="budget">Budget range</label>
-                <select id="budget" name="budget">
+                <select id="budget" name="budget" aria-label="Estimated budget for your project">
                     <option value="">Select Budget</option>
                     <option value="under-500k">Under 500,000</option>
                     <option value="500k-1m">#500,000 - #1,000,000</option>
@@ -213,11 +304,15 @@
                 </select>
             </div>
 
-            
+            <!-- Dedicated textarea for detailed project description -->
             <div class="form-group">
-                <label for="message">Project Details</label>
-                <textarea name="message" id="messgae" required placeholder="Tell us about your project"></textarea>
+                <label for="projectDescription">Describe Your Project Idea</label>
+                <textarea name="projectDescription" id="projectDescription" required placeholder="Share your vision: What type of content do you need? Any specific ideas, style preferences, or goals?" aria-label="Detailed description of your project" aria-describedby="projectDescriptionHint"></textarea>
+                <small id="projectDescriptionHint" class="form-hint">Please provide as much detail as possible to help us understand your vision better.</small>
             </div>
+
+            <!-- Original message field for backward compatibility (hidden) -->
+            <input type="hidden" name="message" id="message">
 
             <button type="submit" class="submit-btn">Send message</button>
         </form>
@@ -227,6 +322,70 @@
           © DULAI FILMS LIMITED . AJAH, LAGOS
      </footer>
      <script>
+        /* ===================================
+           Hamburger Menu Functionality
+           Manages responsive mobile navigation
+           ==================================== */
+
+        // Get DOM elements for hamburger menu
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        const navAnchors = navLinks.querySelectorAll('a');
+
+        /**
+         * Toggle hamburger menu open/close state
+         * Updates aria-expanded for accessibility
+         */
+        function toggleHamburgerMenu() {
+            hamburgerBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Update aria-expanded for screen readers
+            const isExpanded = hamburgerBtn.classList.contains('active');
+            hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+        }
+
+        /**
+         * Close hamburger menu when navigation link is clicked
+         * Improves UX by automatically closing after selection
+         */
+        function closeHamburgerMenu() {
+            hamburgerBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        // Add click event listener to hamburger button
+        hamburgerBtn.addEventListener('click', toggleHamburgerMenu);
+
+        // Close menu when any nav link is clicked
+        navAnchors.forEach(anchor => {
+            anchor.addEventListener('click', closeHamburgerMenu);
+        });
+
+        /**
+         * Close menu when clicking outside
+         * Provides better UX by closing on body clicks
+         */
+        document.addEventListener('click', (e) => {
+            // Check if click is outside nav and hamburger button
+            if (!navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                closeHamburgerMenu();
+            }
+        });
+
+        /**
+         * Keyboard accessibility: Close menu on Escape key
+         * Standard UX pattern for dismissible elements
+         */
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                closeHamburgerMenu();
+                hamburgerBtn.focus();
+                // Return focus to hamburger button after closing
+            }
+        });
+
         /* ===================================
            Theme Toggle Functionality
            Manages dark/light mode switching
@@ -298,17 +457,195 @@
         contactForm.addEventListener('submit', function(e) { 
            e.preventDefault();
            
-           // Get form data
+           // Get form data with corrected field IDs and new project description field
            const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
             projectType: document.getElementById('projectType').value,
             budget: document.getElementById('budget').value,
-            message: document.getElementById('message').value,
+            // Updated: Use projectDescription for main content, sync with legacy message field
+            projectDescription: document.getElementById('projectDescription').value,
+            message: document.getElementById('projectDescription').value, // Keep for backward compatibility
            };  
 
         } ) 
+
+        /* ===================================
+           About Section Service Filter
+           Handles button group interactions for service selection
+           ==================================== */
+
+        // Get all service option buttons
+        const serviceButtons = document.querySelectorAll('.about-option-btn');
+        let selectedService = 'all';
+
+        /**
+         * Handle service button click
+         * Updates active state and aria-pressed attributes
+         */
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all buttons
+                serviceButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                this.setAttribute('aria-pressed', 'true');
+                
+                // Update selected service
+                selectedService = this.dataset.service;
+                
+                // Log for analytics/tracking
+                console.log(`Service filter changed to: ${this.textContent.trim()}`);
+            });
+
+            /**
+             * Keyboard navigation support
+             * Allow arrow keys to navigate between buttons
+             */
+            button.addEventListener('keydown', function(e) {
+                let targetButton = null;
+                const buttons = Array.from(serviceButtons);
+                const currentIndex = buttons.indexOf(this);
+
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    targetButton = buttons[(currentIndex + 1) % buttons.length];
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    targetButton = buttons[(currentIndex - 1 + buttons.length) % buttons.length];
+                } else if (e.key === 'Home') {
+                    e.preventDefault();
+                    targetButton = buttons[0];
+                } else if (e.key === 'End') {
+                    e.preventDefault();
+                    targetButton = buttons[buttons.length - 1];
+                }
+
+                if (targetButton) {
+                    targetButton.focus();
+                    targetButton.click();
+                }
+            });
+        });
+
+        /* ===================================
+           Image Modal/Lightbox Functionality
+           Handles image expansion and overlay interactions
+           ==================================== */
+
+        // Get modal DOM elements
+        const imageModal = document.getElementById('imageModal');
+        const aboutImage = document.getElementById('aboutImage');
+        const expandedImage = document.getElementById('expandedImage');
+        const imageModalClose = document.getElementById('imageModalClose');
+        const imageModalBackdrop = document.querySelector('.image-modal-backdrop');
+
+        /**
+         * Open image modal
+         * Shows expanded fullscreen image with animation
+         */
+        function openImageModal() {
+            imageModal.classList.add('active');
+            imageModal.setAttribute('aria-hidden', 'false');
+            
+            // Prevent body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+            
+            // Focus close button for keyboard navigation
+            imageModalClose.focus();
+            
+            // Log for analytics
+            console.log('Image expanded to fullscreen');
+        }
+
+        /**
+         * Close image modal
+         * Removes modal from view with animation
+         */
+        function closeImageModal() {
+            imageModal.classList.remove('active');
+            imageModal.setAttribute('aria-hidden', 'true');
+            
+            // Restore body scroll
+            document.body.style.overflow = '';
+            
+            // Return focus to image
+            aboutImage.focus();
+            
+            // Log for analytics
+            console.log('Image modal closed');
+        }
+
+        /**
+         * Click handler for image expansion
+         * Opens modal when user clicks the image
+         */
+        aboutImage.addEventListener('click', openImageModal);
+
+        /**
+         * Keyboard handler for image expansion
+         * Allow Enter or Space key to open modal (accessibility)
+         */
+        aboutImage.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openImageModal();
+            }
+        });
+
+        /**
+         * Close button click handler
+         * Closes modal when close button is clicked
+         */
+        imageModalClose.addEventListener('click', closeImageModal);
+
+        /**
+         * Backdrop click handler
+         * Closes modal when clicking outside the image
+         */
+        imageModalBackdrop.addEventListener('click', closeImageModal);
+
+        /**
+         * Keyboard accessibility: Escape key closes modal
+         * Standard UX pattern for dismissible modals
+         */
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                closeImageModal();
+            }
+        });
+
+        /**
+         * Handle clicks on the expanded image
+         * Prevent closing when clicking directly on the image
+         */
+        expandedImage.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Prevents backdrop click handler from firing
+        });
+
+        /**
+         * Trap focus within modal when open
+         * Keeps keyboard navigation within modal for accessibility
+         */
+        imageModal.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab' && imageModal.classList.contains('active')) {
+                // Only the close button is interactive in the modal
+                // Tab focus will naturally cycle through available elements
+                // In this case, just the close button
+                if (document.activeElement === imageModalClose && e.shiftKey === false) {
+                    e.preventDefault();
+                    imageModalClose.focus();
+                }
+            }
+        });
      </script>
 
     

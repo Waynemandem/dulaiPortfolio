@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work - Dulai Films</title>
+    <link rel="stylesheet" href="dulai.css">
+</head>
+<body>
+
+     <!-- navigation -->
+    <nav>
+        <div class="logo">DULAI FILMS</div>
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <button 
+                class="theme-toggle" 
+                id="themeToggle"
+                aria-label="Toggle dark and light theme"
+                aria-pressed="false"
+                title="Toggle theme">
+            </button>
+        </div>
+    </nav>
+
+    <section class="work" id="work">
+        <h2 class="section-title">FEATURED WORK</h2>
+        <div class="video-grid">
+
+            <div class="video-card">
+                <img src="assets/dulai2.jpg" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Drone Photography</div>
+                    <div class="video-category">Our Work</div>
+                </div>
+            </div>
+
+             <div class="video-card">
+                <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Drone Photography</div>
+                    <div class="video-category">Our Work</div>
+                </div>
+            </div>
+
+             <div class="video-card">
+                <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Drone Photography</div>
+                    <div class="video-category">Our Work</div>
+                </div>
+            </div>
+
+             <div class="video-card">
+                <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Drone Photography</div>
+                    <div class="video-category">Our Work</div>
+                </div>
+            </div>
+
+             <div class="video-card">
+                <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Drone Photography</div>
+                    <div class="video-category">Our Work</div>
+                </div>
+            </div>
+
+             <div class="video-card">
+                <img src="" alt="">
+                <div class="video-overlay">
+                    <div class="video-title">Drone Photography</div>
+                    <div class="video-category">Our Work</div>
+                </div>
+            </div>
+        </div>
+
+            <div class="video-card">
+                 <img src="assets/vlcsnap-2025-12-29-20h45m42s181.png" alt="">
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+             <div class="video-card">
+                 <img src="assets/vlcsnap-2025-12-29-20h39m19s752.png" alt="">
+                <div class="video-overlay">
+                    <div class="video-title"></div>
+                    <div class="video-category"></div>
+                </div>
+            </div>
+
+    </section>
+
+     <footer class="footer">
+          © DULAI FILMS LIMITED . AJAH, LAGOS
+     </footer>
+    <script>
+     // Get DOM elements
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Initialize theme on page load
+        const initializeTheme = () => {
+            // Check for saved theme preference or default to dark
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            
+            if (savedTheme === 'light') {
+                body.classList.add('light-theme');
+                themeToggle.classList.add('active');
+                themeToggle.setAttribute('aria-pressed', 'true');
+            } else {
+                // Ensure dark mode is set
+                body.classList.remove('light-theme');
+                themeToggle.classList.remove('active');
+                themeToggle.setAttribute('aria-pressed', 'false');
+            }
+        };
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Allow toggle via keyboard (Enter or Space)
+        themeToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+
+        function toggleTheme() {
+            // Toggle light-theme class on body
+            body.classList.toggle('light-theme');
+            themeToggle.classList.toggle('active');
+
+            // Determine current theme
+            const isLightTheme = body.classList.contains('light-theme');
+
+            // Update aria-pressed for accessibility
+            themeToggle.setAttribute('aria-pressed', isLightTheme.toString());
+
+            // Save preference to localStorage
+            const theme = isLightTheme ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+
+            // Optional: Log for debugging
+            console.log(`Theme switched to: ${theme}`);
+        }
+
+        // Initialize theme when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeTheme);
+        } else {
+            initializeTheme();
+        }
+        </script>
+
+</body>
+</html>

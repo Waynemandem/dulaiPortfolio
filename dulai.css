@@ -20,6 +20,13 @@
     --shadow-glow: rgba(255, 107, 107, 0.15);
     --overlay-dark: rgba(0, 0, 0, 0.3);
     --gradient-nav: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 100%);
+    
+    /* Section separation variables - Dark mode (subtle depth effect) */
+    --section-divider: rgba(255, 255, 255, 0.05);
+    --section-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --section-bg-light: #131820;
+    --section-bg-lightest: #16202d;
+    --gradient-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Light theme */
@@ -27,7 +34,7 @@ body.light-theme {
     --bg-primary: #f5f5f5;
     --bg-secondary: #ffffff;
     --bg-tertiary: #e8e8e8;
-    --text-primary: #1a1a1a;
+    --text-primary: black;
     --text-secondary: #666666;
     --text-tertiary: #999999;
     --accent-color: #ff6b6b;
@@ -37,6 +44,13 @@ body.light-theme {
     --shadow-glow: rgba(255, 107, 107, 0.2);
     --overlay-dark: rgba(0, 0, 0, 0.4);
     --gradient-nav: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    
+    /* Section separation variables - Light mode (subtle tonal shifts) */
+    --section-divider: rgba(0, 0, 0, 0.06);
+    --section-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --section-bg-light: #fafafa;
+    --section-bg-lightest: #f0f0f0;
+    --gradient-subtle: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 body {
@@ -46,6 +60,7 @@ body {
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
     /* Smooth theme transition */
+    padding-top: 0px; /* To prevent content being hidden under fixed nav */
 }
 
 /* NAVIGATION */
@@ -85,6 +100,45 @@ nav {
     color: var(--accent-color);
 }
 
+/* Hamburger Menu Button - Hidden on Desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 6px;
+    padding: 8px;
+    position: relative;
+    z-index: 1001;
+    /* Higher z-index to stay above nav-links */
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Smooth animation for hamburger rotation and position */
+}
+
+/* Hamburger active state: transform lines into X */
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    /* Hide middle line when active */
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     width: 50px;
@@ -114,8 +168,13 @@ nav {
 
 /* Sun icon (default for dark mode) */
 .theme-toggle::before {
-    content: '☀️';
-    font-size: 24px;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cline x1='12' y1='1' x2='12' y2='3'/%3E%3Cline x1='12' y1='21' x2='12' y2='23'/%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'/%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'/%3E%3Cline x1='1' y1='12' x2='3' y2='12'/%3E%3Cline x1='21' y1='12' x2='23' y2='12'/%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'/%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     opacity: 1;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: rotate(0deg);
@@ -123,8 +182,13 @@ nav {
 
 /* Moon icon (shown in light mode) */
 .theme-toggle::after {
-    content: '🌙';
-    font-size: 24px;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -152,8 +216,13 @@ nav {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    /* Subtle bottom border to separate from next section */
+    border-bottom: 1px solid var(--section-divider);
+    /* Soft shadow layering for depth effect */
+    box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.2);
 }
 .hero-video {
+    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -202,9 +271,43 @@ nav {
 }
 
 /* work section */
+.see-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.see-more-btn {
+    padding: 14px 32px;
+    border-radius: 40px;
+    border: 1px solid var(--border-light);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.see-more-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
 .work {
     padding: 100px 50px;
     background: var(--bg-primary);
+    /* Subtle tonal variation from primary background for depth */
+    position: relative;
+    /* Add layered depth with background pattern */
+    background-image: var(--gradient-subtle);
+    background-attachment: fixed;
+    /* Top border to create visual separation from hero */
+    border-top: 1px solid var(--section-divider);
+    /* Bottom shadow creates depth transition to next section */
+    box-shadow: 0 1px 0 var(--section-divider), inset 0 -1px 0 var(--section-divider);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .section-title {
     text-align: center;
@@ -272,6 +375,12 @@ nav {
             background: var(--bg-primary);
             /* Dark, cinematic foundation matching hero section */
             transition: background-color 0.3s ease;
+            /* Enhanced visual separation with layered dividers */
+            position: relative;
+            border-top: 1px solid var(--section-divider);
+            border-bottom: 1px solid var(--section-divider);
+            /* Subtle shadow for subtle depth elevation */
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 var(--section-divider);
         }
 
         .gallery h2 {
@@ -414,39 +523,313 @@ nav {
             padding: 100px 50px;
             background: var(--bg-secondary);
             transition: background-color 0.3s ease;
+            /* Visual separation with tonal shift and dividers */
+            position: relative;
+            border-top: 1px solid var(--section-divider);
+            border-bottom: 1px solid var(--section-divider);
+            /* Subtle inset shadow for depth without harshness */
+            box-shadow: inset 0 1px 20px rgba(0, 0, 0, 0.1), inset 0 -1px 0 var(--section-divider);
         }
 
         .about-content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
+            /* Responsive layout: Grid for desktop, stack on mobile */
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
+            transition: gap 0.3s ease;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            /* Semantic grouping of text content */
         }
 
         .about-text h2 {
             font-size: 42px;
-            margin-bottom: 30px;
+            margin-bottom: 0;
+            /* Reset margin, handled by gap */
             color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            /* Slight negative letter-spacing for modern appeal */
+            transition: color 0.3s ease;
         }
 
         .about-text p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.8;
             color: var(--text-secondary);
-            margin-bottom: 20px;
+            margin: 0;
+            /* Reset margin, handled by flex gap */
+            transition: color 0.3s ease;
+            letter-spacing: 0.3px;
+            /* Slight letter-spacing for readability */
         }
 
+        /* About section filter dropdown wrapper */
+        .about-filter-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            /* Semantic grouping of label and select */
+        }
+
+        .about-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            opacity: 0.8;
+            transition: opacity 0.3s ease, color 0.3s ease;
+        }
+
+        /* Button group container for service options */
+        .about-options-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            /* Spacing between service option buttons */
+        }
+
+        /* Individual service option button */
+        .about-option-btn {
+            padding: 10px 18px;
+            font-size: 14px;
+            font-family: inherit;
+            border-radius: 24px;
+            /* Pill-shaped buttons for modern aesthetic */
+            border: 2px solid var(--section-divider);
+            background-color: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth cubic-bezier for natural animations */
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            /* Prevent text wrapping */
+        }
+
+        /* Hover state for service buttons */
+        .about-option-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.15);
+            /* Subtle glow on hover */
+        }
+
+        /* Active/selected state for service buttons */
+        .about-option-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            box-shadow: 0 6px 16px rgba(255, 107, 107, 0.25);
+            /* Enhanced shadow for active state */
+        }
+
+        /* Focus state for accessibility */
+        .about-option-btn:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px var(--shadow-glow), 0 6px 16px rgba(255, 107, 107, 0.2);
+            /* Accessible focus ring */
+        }
+
+        /* Active + Focus for keyboard navigation */
+        .about-option-btn.active:focus {
+            box-shadow: 0 0 0 3px var(--shadow-glow), 0 6px 16px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Image container with modern styling */
         .about-image {
-            border-radius: 15px;
+            border-radius: 16px;
+            /* Larger border radius for modern aesthetic */
             overflow: hidden;
+            /* Clip image to border radius */
+            box-shadow: 0 12px 40px var(--section-shadow);
+            /* Subtle depth shadow */
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+            /* Smooth interactions */
+            position: relative;
+            aspect-ratio: 1 / 1;
+            /* Square aspect ratio for visual balance */
+        }
+
+        /* Hover effect on image */
+        .about-image:hover {
+            box-shadow: 0 16px 48px rgba(255, 107, 107, 0.15);
+            /* Enhanced shadow on hover */
+            transform: translateY(-4px);
+            /* Subtle lift effect */
         }
 
         .about-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* Fill container while maintaining aspect ratio */
+            transition: transform 0.4s ease;
+            /* Smooth zoom effect */
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+            /* Subtle zoom on hover for interactivity */
+        }
+
+        /* Wrapper for about image to enable cursor pointer */
+        .about-image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===================================
+           Image Modal/Lightbox Styles
+           Fullscreen overlay with expansion animation
+           ==================================== */
+
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            /* Cover entire viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            /* Above all other content */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth fade-in/fade-out */
+        }
+
+        /* Active state when modal is open */
+        .image-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Dark semi-transparent background backdrop */
+        .image-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            /* Semi-transparent dark overlay */
+            backdrop-filter: blur(4px);
+            /* Subtle blur effect for depth */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Modal content container with centered image */
+        .image-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            /* Responsive sizing relative to viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            /* Above backdrop */
+        }
+
+        /* Expanded image in modal */
+        .image-modal-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* Maintain aspect ratio while fitting viewport */
+            border-radius: 12px;
+            /* Subtle rounded corners */
+            animation: imageZoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            /* Smooth zoom-in animation */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            /* Depth shadow */
+        }
+
+        /* Close button styling */
+        .image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            min-height: 48px;
+            /* Accessible touch target size */
+            border: none;
+            background-color: rgba(255, 255, 255, 0.15);
+            /* Subtle semi-transparent white */
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth color and scale transition */
+            z-index: 20;
+            /* Above image */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        /* Close button hover state */
+        .image-modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            /* More opaque white on hover */
+            transform: scale(1.1);
+            /* Subtle scale effect */
+        }
+
+        /* Close button focus state for keyboard navigation */
+        .image-modal-close:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.4);
+            /* Accessible focus ring with accent color */
+        }
+
+        /* Close button active/pressed state */
+        .image-modal-close:active {
+            transform: scale(0.95);
+            /* Press effect */
+        }
+
+        /* Close button SVG icon styling */
+        .image-modal-close svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+        }
+
+        /* ===================================
+           Image Zoom-In Animation
+           Smooth entrance transition for expanded image
+           ==================================== */
+        @keyframes imageZoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+                /* Start slightly smaller and transparent */
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+                /* Scale up and fade in to full size */
+            }
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+            /* Subtle zoom on hover */
         }
 
         /* Contact section */
@@ -455,6 +838,12 @@ nav {
             text-align: center;
             background: var(--bg-primary);
             transition: background-color 0.3s ease;
+            /* Visual separation from about section */
+            position: relative;
+            border-top: 1px solid var(--section-divider);
+            border-bottom: 1px solid var(--section-divider);
+            /* Layered effect for visual depth */
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), inset 0 -20px 40px rgba(0, 0, 0, 0.2);
         }
         .contact-content {
             max-width: 600px;
@@ -492,9 +881,59 @@ nav {
             padding: 50px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
+            /* Enhanced visual separation from contact section */
+            position: relative;
+            margin: 100px 50px;
+            /* Subtle border for definition */
+            border: 1px solid var(--section-divider);
+            /* Soft shadow for depth elevation */
+            box-shadow: 0 8px 32px var(--section-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* Form header with title and subtitle for improved UX */
+        .form-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .form-title {
+            font-size: 32px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .form-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
         }
         body.light-theme .contact-form { 
             background: rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Responsive adjustments for form on mobile devices */
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+            
+            .form-subtitle {
+                font-size: 14px;
+            }
+            
+            .form-header {
+                margin-bottom: 30px;
+            }
         }
         .form-group {
             margin-bottom: 30px;
@@ -504,64 +943,138 @@ nav {
             font-size: 12px;
             letter-spacing: 2px;
             margin-bottom: 10px;
-            opacity: 0.7;
+            opacity: 0.8;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: opacity 0.3s ease, color 0.3s ease;
+            /* Smooth theme transitions */
         }
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            color: white;
+            background: var(--bg-secondary);
+            /* Use secondary theme color for better visual hierarchy */
+            border: 2px solid var(--section-divider);
+            /* Dynamic divider color that adapts to theme */
+            border-radius: 8px;
+            /* Smooth rounded corners for modern aesthetic */
+            color: var(--text-primary);
+            /* Primary text color for contrast */
             font-size: 16px;
-            font-family: Arial, sans-serif;
-            transition: all 0.3s;
+            font-family: inherit;
+            /* Inherit portfolio font family */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth cubic-bezier transitions for natural feel */
+            min-height: 48px;
+            /* Accessible minimum touch target size */
+        }
+
+        /* Custom dropdown arrow for select elements */
+        .form-group select {
+            appearance: none;
+            /* Remove default browser styling */
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+            padding-right: 40px;
+            /* Space for custom dropdown arrow */
+            cursor: pointer;
         }
         body.light-theme .form-group input,
         body.light-theme .form-group select,
         body.light-theme .form-group textarea {
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            color: black;                
+            background: var(--bg-secondary);
+            /* White background in light mode */
+            border-color: rgba(0, 0, 0, 0.12);
+            /* Subtle dark border in light mode */
+            color: var(--text-primary);
+            /* Dark text in light mode */
         }
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: var(--accent-color);
+            /* Red accent on hover */
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.1);
+            /* Subtle glow shadow */
+        }
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #ff6b6b;
-            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-color);
+            background: var(--bg-secondary);
+            box-shadow: 0 0 0 3px var(--shadow-glow);
+            /* Accessible focus ring with theme-specific shadow */
         }
         body.light-theme .form-group input:focus,
         body.light-theme .form-group select:focus,
         body.light-theme .form-group textarea:focus {
-            background: rgba(0, 0, 0, 0.08);
+            background: var(--bg-secondary);
+            /* Maintain background in light mode */
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px var(--shadow-glow);
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
+            /* Increased height for better content input */
+            font-family: inherit;
+            /* Use portfolio font family */
+            line-height: 1.6;
+            /* Better readability in textarea */
+        }
+        
+        /* Helper text for form hints and guidance */
+        .form-hint {
+            display: block;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+            font-style: italic;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+            /* Smooth theme transition */
         }
         .submit-btn {
             width: 100%;
             padding: 18px;
-            background: #ff6b6b;
+            background: var(--accent-color);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            /* Smooth rounded corners for modern look */
             font-size: 16px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-weight: bold;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth cubic-bezier for natural animations */
+            font-weight: 600;
+            min-height: 48px;
+            /* Accessible minimum touch target size */
         }
+        
         .submit-btn:hover {
-            background: #ff5252;
+            background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
+            box-shadow: 0 10px 30px var(--shadow-glow);
+            /* Theme-specific shadow */
         }
+        
+        .submit-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--shadow-glow), 0 10px 30px var(--shadow-glow);
+            /* Accessible focus state */
+        }
+        
         .submit-btn:active {
             transform: translateY(0);
+            /* Remove lift on active */
         }
         .form-message {
             margin-top: 20px;
@@ -587,13 +1100,17 @@ nav {
         .footer {
             padding: 40px 50px;
             text-align: center;
-            border-top: 1px solid var(--border-light);
+            /* Enhanced visual separation from contact form */
+            border-top: 2px solid var(--section-divider);
             font-size: 12px;
             letter-spacing: 2px;
             opacity: 0.5;
             background: var(--bg-primary);
             color: var(--text-primary);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            /* Subtle shadow for depth effect */
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
 
         /* animations */
@@ -608,107 +1125,235 @@ nav {
             }
         }
 
-        /* responsive */
-        /* Tablet: 2 columns */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 42px;
+        /* Section transition enhancement - smooth theme and visual updates */
+        @keyframes sectionFadeIn {
+            from {
+                opacity: 0.8;
+                transform: translateY(-5px);
             }
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            nav {
-                padding: 20px 20px;
-            }
-            .nav-links {
-                gap: 15px;
-            }
-            
-            /* Gallery: 2 columns on tablet */
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-                padding: 0 20px;
-            }
-            
-            .gallery {
-                padding: 80px 20px;
-            }
-            
-            .gallery-item::before {
-                font-size: 36px;
-            }
-            
-            /* Theme toggle: smaller on mobile */
-            .theme-toggle {
-                width: 45px;
-                height: 45px;
-            }
-            
-            .theme-toggle::before,
-            .theme-toggle::after {
-                font-size: 20px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Mobile: 1 column */
-        @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .gallery {
-                padding: 60px 15px;
-            }
-            
-            .gallery-item {
-                border-radius: 10px;
-            }
-            
-            .gallery-item::before {
-                font-size: 32px;
-            }
-            
-            .video-title {
-                font-size: 16px;
-                bottom: 15px;
-                left: 15px;
-                right: 15px;
-            }
-            
-            .video-category {
-                font-size: 11px;
-                bottom: 2px;
-                left: 15px;
-                right: 15px;
-            }
-            
-            /* Theme toggle: compact on small devices */
-            .theme-toggle {
-                width: 40px;
-                height: 40px;
-                border-width: 1.5px;
-                margin-left: 10px;
-            }
-            
-            .theme-toggle::before,
-            .theme-toggle::after {
-                font-size: 18px;
-            }
-            
+        /* Apply subtle entrance animation to major sections for polish */
+        .hero,
+        .work,
+        .gallery,
+        .about,
+        .contact,
+        .contact-form {
+            animation: sectionFadeIn 0.6s ease-out;
+        }
+
+         /* Responsive */
+        @media (max-width: 968px) {
             nav {
-                padding: 15px 10px;
+                padding: 20px 30px;
             }
-            
-            .logo {
-                font-size: 18px;
+
+            /* Show hamburger menu on tablets and mobile */
+            .hamburger {
+                display: flex;
             }
-            
+
+            /* Mobile nav-links: Hidden by default, visible when active */
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg-primary);
+                border-bottom: 1px solid var(--border-light);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+                /* Smooth collapse/expand animation */
+                z-index: 999;
+            }
+
+            /* Mobile nav-links active state: expand dropdown */
+            .nav-links.active {
+                max-height: 300px;
+                padding: 20px;
+            }
+
             .nav-links a {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-light);
+                display: block;
+            }
+
+            .nav-links a:last-of-type {
+                border-bottom: none;
+            }
+
+            /* Theme toggle button in mobile menu */
+            .theme-toggle {
+                margin-left: 0;
+                margin-top: 12px;
+                align-self: flex-start;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .nav-links a {
+                margin-left: 20px;
+                font-size: 12px;
+            }
+
+            .hero-text {
+                left: 30px;
+                bottom: 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 50px;
+            }
+
+            .hero-text p {
                 font-size: 14px;
+            }
+
+            .video-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .video-item.large {
+                grid-column: span 1;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                padding: 80px 30px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                /* Reduced gap on mobile for better use of space */
+            }
+
+            .about-text h2 {
+                font-size: 32px;
+                line-height: 1.3;
+            }
+
+            .about-text p {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .about-label {
+                font-size: 12px;
+            }
+
+            .about-options-group {
+                gap: 8px;
+                /* Reduced gap for tighter mobile layout */
+            }
+
+            .about-option-btn {
+                padding: 9px 14px;
+                font-size: 13px;
+                /* Adjusted for mobile readability */
+            }
+
+            .about-image {
+                border-radius: 12px;
+                /* Slightly smaller border radius on mobile */
+                aspect-ratio: 4 / 3;
+                /* More landscape-oriented on mobile */
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 100px 30px;
+            }
+
+            .contact h2 {
+                font-size: 42px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .contact-form {
+                padding: 30px;
+                margin: 60px 20px;
+                /* Maintain visual separation on mobile with adjusted margins */
+            }
+
+            .contact-info a {
+                font-size: 16px;
+            }
+            
+            /* Adjust section padding for mobile while maintaining visual separation */
+            .hero {
+                border-bottom: 1px solid var(--section-divider);
+            }
+            
+            .work,
+            .gallery {
+                padding: 60px 30px;
+            }
+            
+            .about {
+                padding: 60px 30px;
+            }
+            
+            .footer {
+                padding: 30px 20px;
+                border-top: 2px solid var(--section-divider);
+            }
+        }
+
+        /* Extra small devices (below 480px) */
+        @media (max-width: 480px) {
+            .about-text h2 {
+                font-size: 28px;
+            }
+
+            .about-text p {
+                font-size: 14px;
+            }
+
+            .about-options-group {
+                gap: 6px;
+            }
+
+            .about-option-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+                border-radius: 20px;
+            }
+
+            .about-content {
+                gap: 28px;
+            }
+
+            /* Image modal responsive adjustments for tablet */
+            .image-modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .image-modal-close {
+                top: 15px;
+                right: 15px;
+                width: 44px;
+                height: 44px;
+                min-height: 44px;
             }
         }
