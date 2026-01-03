@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Work - Dulai Films</title>
+    <meta name="description" content="Dulai Films - Professional videography and film production portfolio. Showcasing aerial commercials, real estate, tourism films, and corporate videos.">
+    <title>Works - Dulai Films | Professional Video Production</title>
     <link rel="stylesheet" href="dulai.css">
 </head>
 <body>
-
-     <!-- navigation -->
+    <!-- Navigation -->
     <nav>
-        <div class="logo">DULAI FILMS</div>
-        <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+        <a href="index.html" class="logo">
+            <img src="assets/image.png" alt="Dulai Films Logo">
+        </a>
+        
+        <!-- Mobile menu button -->
+        <button 
+            class="hamburger" 
+            id="hamburgerBtn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Navigation Links -->
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#work">Work</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+            
+            <!-- Theme Toggle -->
             <button 
                 class="theme-toggle" 
                 id="themeToggle"
@@ -25,198 +43,228 @@
         </div>
     </nav>
 
-
-    <!---Hero section-->
-    <!---Hero section-->
+    <!-- Hero Section -->
     <section class="hero">
-         <video class="hero-video" autoplay loop muted playsinline>
-            <source src="assets/video_2025-12-31_03-53-30.mp4" type="video/mp4" lazyload="eager">
-               Your browser does not support the video tag.
-         </video>
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="assets/video_2025-12-31_03-53-30.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
         <div class="hero-content">
-            <h1>FILM/VIDEO PRODUCTION COMPANY</h1>
-            <p>Crafting Cinematic experience that moves People!</p>
-            <a href="works.html" class="cta-button">View My Work</a>
+            <h1>Featured Works</h1>
+            <p>A collection of our finest cinematic productions</p>
         </div>   
     </section>
 
-    <!---work section-->
+    <!-- Work Section -->
     <section class="work" id="work">
-        <h2 class="section-title">FEATURED WORK</h2>
+        <h2 class="section-title">Our Portfolio</h2>
+        
         <div class="video-grid">
-
+            <!-- Work Card 1 -->
             <div class="video-card">
-                <img src="assets/dulai2.jpg" alt="">
+                <img src="assets/dulai2.jpg" alt="Above the Standard - Aerial Commercial">
                 <div class="video-overlay">
-                    <div class="video-title">Above the Standard</div>
-                    <div class="video-category">Aerial Commercial</div>
+                    <h3 class="video-title">Above the Standard</h3>
+                    <p class="video-category">Aerial Commercial</p>
                 </div>
             </div>
 
+            <!-- Work Card 2 -->
             <div class="video-card">
-                 <img src="assets/dulai-img1.jpg" alt="">
+                <img src="assets/dulai-img1.jpg" alt="An Elevated Address - Real Estate Aerials">
                 <div class="video-overlay">
-                    <div class="video-title">An Elevated Address</div>
-                    <div class="video-category">Real Estate Aerials</div>
+                    <h3 class="video-title">An Elevated Address</h3>
+                    <p class="video-category">Real Estate Aerials</p>
                 </div>
             </div>
 
-            <div class="video-card"> 
-                 <img src="assets/photo_2025-12-27_20-29-31.jpg" alt="">
-                <div class="video-overlay">
-                    <div class="video-title">Discover the Quiet</div>
-                    <div class="video-category">Tourism / Destination Films</div>
-                </div>
-            </div>
-
+            <!-- Work Card 3 -->
             <div class="video-card">
-                 <img src="assets/vlcsnap-2025-12-29-20h41m28s662.png" alt="">
+                <img src="assets/photo_2025-12-27_20-29-31.jpg" alt="Discover the Quiet - Tourism">
                 <div class="video-overlay">
-                    <div class="video-title">In Their Element</div>
-                    <div class="video-category">Lifestyle / Fashion / Personal Brand</div>
+                    <h3 class="video-title">Discover the Quiet</h3>
+                    <p class="video-category">Tourism / Destination Films</p>
                 </div>
             </div>
 
+            <!-- Work Card 4 -->
             <div class="video-card">
-                <img src="assets/vlcsnap-2025-12-29-20h39m19s752.png" alt="">
+                <img src="assets/vlcsnap-2025-12-29-20h41m28s662.png" alt="In Their Element - Lifestyle Production">
                 <div class="video-overlay">
-                    <div class="video-title">Before It Goes Live</div>
-                    <div class="video-category">Story-Driven</div>
+                    <h3 class="video-title">In Their Element</h3>
+                    <p class="video-category">Lifestyle / Fashion / Personal Brand</p>
                 </div>
             </div>
 
+            <!-- Work Card 5 -->
             <div class="video-card">
-                 <img src="assets/vlcsnap-2025-12-29-20h40m42s024.png" alt="">
+                <img src="assets/vlcsnap-2025-12-29-20h39m19s752.png" alt="Before It Goes Live - Story-Driven Content">
                 <div class="video-overlay">
-                    <div class="video-title">The Work Behind The Work</div>
-                    <div class="video-category">Documentary</div>
+                    <h3 class="video-title">Before It Goes Live</h3>
+                    <p class="video-category">Story-Driven</p>
                 </div>
             </div>
 
+            <!-- Work Card 6 -->
             <div class="video-card">
-                <img src="" alt="">
+                <img src="assets/vlcsnap-2025-12-29-20h40m42s024.png" alt="The Work Behind The Work - Documentary">
                 <div class="video-overlay">
-                    <div class="video-title"></div>
-                    <div class="video-category"></div>
+                    <h3 class="video-title">The Work Behind The Work</h3>
+                    <p class="video-category">Documentary</p>
                 </div>
             </div>
 
-            
+            <!-- Work Card 7 -->
             <div class="video-card">
-                <img src="" alt="">
+                <img src="assets/vlcsnap-2025-12-29-20h38m40s538.png" alt="Featured Work">
                 <div class="video-overlay">
-                    <div class="video-title"></div>
-                    <div class="video-category"></div>
+                    <h3 class="video-title">Coming Soon</h3>
+                    <p class="video-category">Upcoming Project</p>
                 </div>
             </div>
-
-            
-            <div class="video-card">
-                <img src="" alt="">
-                <div class="video-overlay">
-                    <div class="video-title"></div>
-                    <div class="video-category"></div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    
-    <!-- Gallery section -->
-     <section class="gallery">
-        <h2>Gallery</h2>
-        <br>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2>Video Gallery</h2>
+        
         <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
             <div class="gallery-item">
                 <iframe 
-                    src="https://player.vimeo.com/video/1149467376?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
+                    src="https://player.vimeo.com/video/1149467376?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 
-                    title="dulai.1">
+                    title="Energy, Unscripted">
                 </iframe>
-                <div class="video-title">Cinematic Storytelling</div>
-                <div class="video-category">Vimeo Embed</div>
+                <h3 class="video-title">Energy, Unscripted</h3>
+                <p class="video-category">Experience Coverage</p>
             </div>
+
+            <!-- Gallery Item 2 -->
             <div class="gallery-item">
                 <iframe 
-                src="https://player.vimeo.com/video/1149465491?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                title="dulai7">
-            </iframe>
-                <div class="video-title">Real Estate Videography</div>
-                <div class="video-category">Vimeo Embed</div>
-            </div>
-            <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149466142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
+                    src="https://player.vimeo.com/video/1149465491?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 
-                    title="dulai6">
+                    title="Moments Worth Keeping">
                 </iframe>
-                <div class="video-title">Drone Photography</div>
-                <div class="video-category">Vimeo Embed</div>
+                <h3 class="video-title">Moments Worth Keeping</h3>
+                <p class="video-category">Event Coverage</p>
             </div>
-            <div class="gallery-item">      
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
                 <iframe 
-                    src="https://player.vimeo.com/video/1149466653?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
+                    src="https://player.vimeo.com/video/1149466142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 
-                    title="dulai5">
+                    title="Drone Photography">
                 </iframe>
-                <div class="video-title">Tourism & Travel</div>
-                <div class="video-category">Vimeo Embed</div>
+                <h3 class="video-title">Drone Photography</h3>
+                <p class="video-category">Aerial Cinematography</p>
             </div>
-            <div class="gallery-item">  
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <iframe 
+                    src="https://player.vimeo.com/video/1149466653?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    title="Tourism & Travel">
+                </iframe>
+                <h3 class="video-title">Tourism & Travel</h3>
+                <p class="video-category">Destination Films</p>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
                 <iframe 
                     src="https://player.vimeo.com/video/1149463300?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 
-                    title="dulai4">
+                    title="Commercial Productions">
                 </iframe>
-                <div class="video-title">Commercial Productions</div>
-                <div class="video-category">Vimeo Embed</div>
+                <h3 class="video-title">Commercial Productions</h3>
+                <p class="video-category">Corporate Videos</p>
             </div>
 
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <iframe 
+                    src="https://player.vimeo.com/video/1149465138?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    title="Corporate Videos">
+                </iframe>
+                <h3 class="video-title">Corporate Videos</h3>
+                <p class="video-category">Professional Productions</p>
+            </div>
         </div>
-     </section>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        © Dulai Films Limited. Ajah, Lagos.
+    </footer>
 
-     <footer class="footer">
-          © DULAI FILMS LIMITED . AJAH, LAGOS
-     </footer>
+    <!-- Work Image Modal -->
+    <div 
+        id="workImageModal" 
+        class="work-image-modal"
+        role="dialog"
+        aria-label="Expanded work image view"
+        aria-hidden="true">
+        <div class="work-image-modal-backdrop"></div>
+        <div class="work-image-modal-content">
+            <img 
+                id="workImageModalImg"
+                src="" 
+                alt="Expanded work image"
+                class="work-image-modal-img">
+            <button 
+                id="workImageModalClose"
+                class="work-image-modal-close"
+                aria-label="Close image"
+                title="Close (Esc)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
-     // Get DOM elements
+        /* ===================================
+           Theme Toggle
+           ================================== */
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
 
-        // Initialize theme on page load
         const initializeTheme = () => {
-            // Check for saved theme preference or default to dark
             const savedTheme = localStorage.getItem('theme') || 'dark';
-            
             if (savedTheme === 'light') {
                 body.classList.add('light-theme');
                 themeToggle.classList.add('active');
                 themeToggle.setAttribute('aria-pressed', 'true');
             } else {
-                // Ensure dark mode is set
                 body.classList.remove('light-theme');
                 themeToggle.classList.remove('active');
                 themeToggle.setAttribute('aria-pressed', 'false');
             }
         };
 
-        // Toggle theme on button click
         themeToggle.addEventListener('click', toggleTheme);
-
-        // Allow toggle via keyboard (Enter or Space)
         themeToggle.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -225,25 +273,13 @@
         });
 
         function toggleTheme() {
-            // Toggle light-theme class on body
             body.classList.toggle('light-theme');
             themeToggle.classList.toggle('active');
-
-            // Determine current theme
             const isLightTheme = body.classList.contains('light-theme');
-
-            // Update aria-pressed for accessibility
             themeToggle.setAttribute('aria-pressed', isLightTheme.toString());
-
-            // Save preference to localStorage
-            const theme = isLightTheme ? 'light' : 'dark';
-            localStorage.setItem('theme', theme);
-
-            // Optional: Log for debugging
-            console.log(`Theme switched to: ${theme}`);
+            localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
         }
 
-        // Initialize theme when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initializeTheme);
         } else {
@@ -251,77 +287,61 @@
         }
 
         /* ===================================
-           Work Section Image Lightbox
-           Event delegation-based lightbox for .work section images only
-           ==================================== */
+           Mobile Menu Toggle
+           ================================== */
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
 
-        // Get work image modal DOM elements
+        hamburgerBtn.addEventListener('click', () => {
+            const isActive = navLinks.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+            hamburgerBtn.setAttribute('aria-expanded', isActive.toString());
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburgerBtn.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        /* ===================================
+           Work Image Lightbox Modal
+           ================================== */
         const workImageModal = document.getElementById('workImageModal');
         const workImageModalImg = document.getElementById('workImageModalImg');
         const workImageModalClose = document.getElementById('workImageModalClose');
         const workImageModalBackdrop = document.querySelector('.work-image-modal-backdrop');
         const workSection = document.querySelector('.work');
 
-        // Store reference to the image that opened the modal (for focus restoration)
         let workImageOrigin = null;
 
-        /**
-         * Open work image modal with specified image
-         * @param {HTMLImageElement} imgElement - The image element to display
-         */
         function openWorkImageModal(imgElement) {
-            // Set modal image source and alt text
             workImageModalImg.src = imgElement.src;
             workImageModalImg.alt = imgElement.alt || 'Expanded work image';
-
-            // Store reference to opened image for focus restoration
             workImageOrigin = imgElement;
-
-            // Show modal with animation
             workImageModal.classList.add('active');
             workImageModal.setAttribute('aria-hidden', 'false');
-
-            // Prevent body scroll when modal is open
             document.body.style.overflow = 'hidden';
-
-            // Focus close button for keyboard navigation
             workImageModalClose.focus();
-
-            // Log for analytics
-            console.log('Work image expanded to fullscreen');
         }
 
-        /**
-         * Close work image modal
-         * Restores focus to the image that opened the modal
-         */
         function closeWorkImageModal() {
             workImageModal.classList.remove('active');
             workImageModal.setAttribute('aria-hidden', 'true');
-
-            // Restore body scroll
             document.body.style.overflow = '';
-
-            // Return focus to the image that opened the modal
             if (workImageOrigin) {
                 workImageOrigin.focus();
                 workImageOrigin = null;
             }
-
-            // Log for analytics
-            console.log('Work image modal closed');
         }
 
-        /**
-         * Event delegation: Handle clicks on images within .work section
-         * Only targets images directly inside .work, not nested in other modals
-         */
         if (workSection) {
             workSection.addEventListener('click', function(e) {
-                // Check if clicked element is an image
                 const clickedElement = e.target;
                 if (clickedElement.tagName === 'IMG' && clickedElement.parentElement?.classList.contains('video-card')) {
-                    // Make sure the image is not inside a .video-overlay
                     if (!clickedElement.closest('.video-overlay')) {
                         e.stopPropagation();
                         openWorkImageModal(clickedElement);
@@ -330,91 +350,25 @@
             });
         }
 
-        /**
-         * Close button click handler
-         */
         if (workImageModalClose) {
             workImageModalClose.addEventListener('click', closeWorkImageModal);
         }
 
-        /**
-         * Backdrop click handler
-         * Closes modal when clicking outside the image
-         */
         if (workImageModalBackdrop) {
             workImageModalBackdrop.addEventListener('click', closeWorkImageModal);
         }
 
-        /**
-         * Keyboard accessibility: Escape key closes modal
-         * Standard UX pattern for dismissible modals
-         */
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && workImageModal && workImageModal.classList.contains('active')) {
+            if (e.key === 'Escape' && workImageModal?.classList.contains('active')) {
                 closeWorkImageModal();
             }
         });
 
-        /**
-         * Handle clicks on the expanded image
-         * Prevent closing when clicking directly on the image
-         */
         if (workImageModalImg) {
             workImageModalImg.addEventListener('click', function(e) {
                 e.stopPropagation();
-                // Prevents backdrop click handler from firing
             });
         }
-
-        /**
-         * Trap focus within modal when open
-         * Keeps keyboard navigation within modal for accessibility
-         */
-        if (workImageModal) {
-            workImageModal.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab' && workImageModal.classList.contains('active')) {
-                    // Only the close button is interactive in the modal
-                    if (document.activeElement === workImageModalClose && e.shiftKey === false) {
-                        e.preventDefault();
-                        workImageModalClose.focus();
-                    }
-                }
-            });
-        }
-        </script>
-
-    <!-- Work Section Image Lightbox Modal -->
-    <div 
-        id="workImageModal" 
-        class="work-image-modal"
-        role="dialog"
-        aria-label="Expanded work image view"
-        aria-hidden="true">
-        <!-- Semi-transparent dark background -->
-        <div class="work-image-modal-backdrop"></div>
-        
-        <!-- Modal content container -->
-        <div class="work-image-modal-content">
-            <!-- Expanded image -->
-            <img 
-                id="workImageModalImg"
-                src="" 
-                alt="Expanded work image"
-                class="work-image-modal-img">
-            
-            <!-- Close button in top-right corner -->
-            <button 
-                id="workImageModalClose"
-                class="work-image-modal-close"
-                aria-label="Close image"
-                title="Close (Esc)">
-                <!-- SVG close icon -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </div>
+    </script>
 </body>
 </html>
