@@ -78,10 +78,20 @@ nav {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+/* Logo image */
+.logo img {
+  height: 32px;           /* perfect for desktop */
+  width: 80px;
+  object-fit: contain;
+  background: gray;
+    border-radius: 18px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .nav-links {
@@ -389,133 +399,113 @@ nav {
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            /* 3-4 columns on desktop (350px minimum creates natural 3-4 layout) */
-            gap: 25px;
-            /* Subtle spacing between items */
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
         }
 
+        /* Gallery item with 16:9 aspect ratio */
         .gallery-item {
             position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
             border-radius: 12px;
-            /* Soft rounded corners for modern aesthetic */
             cursor: pointer;
-            aspect-ratio: 16/9;
-            /* Maintains consistent video thumbnail proportions */
-            background: var(--bg-tertiary);
-            /* Charcoal fallback for loading state */
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        box-shadow 0.4s ease;
-            /* Smooth, spring-like transition for scale and shadow */
-            will-change: transform;
-            /* Performance optimization: hints to browser for GPU acceleration */
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 16px var(--shadow-glow);
         }
 
-        .gallery-item img,
-        .gallery-item video,
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px var(--shadow-glow);
+        }
+
+        /* Ensure iframe fills the 16:9 container */
         .gallery-item iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
+            border: none;
             object-fit: cover;
-            /* Ensures images/videos/iframes fill container without distortion */
-            transition: brightness 0.3s ease;
-            display: block;
         }
 
-        /* Hover state: subtle scale-up with soft shadow */
-        .gallery-item:hover {
-            transform: scale(1.05);
-            /* Smooth 5% scale for elegant elevation effect */
-            box-shadow: 0 20px 50px var(--shadow-glow);
-            /* Soft red-tinted glow matching brand color */
-        }
-
-        .gallery-item:hover img,
-        .gallery-item:hover video {
-            brightness: 0.85;
-            /* Slightly dim on hover to make overlay more visible */
-        }
-
-        /* Play icon overlay for video thumbnails */
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            /* Covers entire item */
-            background: var(--overlay-dark);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            /* Smooth fade-in of overlay */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
-        /* Play button icon using CSS */
-        .gallery-item::before {
-            content: '▶';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 48px;
-            color: #ffffff;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            /* Subtle shadow for play icon clarity */
-            will-change: opacity, transform;
-            pointer-events: none;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.1);
-            /* Slight scale for interactive feedback */
-        }
-
-        /* Optional: Metadata overlay at bottom (title/category) */
+        /* Gallery title and category positioning */
         .gallery-item .video-title {
             position: absolute;
             bottom: 20px;
             left: 20px;
-            right: 20px;
             font-size: 18px;
-            font-weight: 500;
-            color: var(--text-primary);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            /* Fade in on hover */
-            z-index: 5;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-            margin-bottom: 0;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            transition: all 0.3s ease;
         }
 
         .gallery-item .video-category {
             position: absolute;
-            bottom: 5px;
+            bottom: 0;
             left: 20px;
-            right: 20px;
-            color: var(--accent-color);
             font-size: 12px;
-            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
             letter-spacing: 1px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 5;
+            z-index: 2;
+            transition: all 0.3s ease;
         }
 
-        .gallery-item:hover .video-title,
+        .gallery-item:hover .video-title {
+            bottom: 35px;
+        }
+
         .gallery-item:hover .video-category {
-            opacity: 1;
+            bottom: 5px;
+        }
+
+        /* Responsive adjustments for gallery 16:9 */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 30px 15px;
+            }
+
+            .gallery-item .video-title {
+                font-size: 16px;
+                bottom: 15px;
+                left: 15px;
+            }
+
+            .gallery-item .video-category {
+                font-size: 11px;
+                left: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 20px 12px;
+            }
+
+            .gallery-item {
+                aspect-ratio: 16 / 9;
+            }
+
+            .gallery-item .video-title {
+                font-size: 14px;
+                bottom: 12px;
+                left: 12px;
+            }
+
+            .gallery-item .video-category {
+                font-size: 10px;
+                left: 12px;
+            }
         }
 
         /* About Section */
@@ -827,9 +817,306 @@ nav {
             }
         }
 
-        .about-image:hover img {
-            transform: scale(1.03);
-            /* Subtle zoom on hover */
+        /* ===================================
+           Gallery Modal/Lightbox Styles
+           Fullscreen overlay for gallery items (images and iframes)
+           ==================================== */
+
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            /* Cover entire viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            /* Above image modal (1000) */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth fade-in/fade-out */
+        }
+
+        /* Active state when modal is open */
+        .gallery-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Dark semi-transparent background backdrop */
+        .gallery-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            /* Semi-transparent dark overlay */
+            backdrop-filter: blur(4px);
+            /* Subtle blur effect for depth */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Modal content container with centered content */
+        .gallery-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            /* Responsive sizing relative to viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            /* Above backdrop */
+        }
+
+        /* Gallery modal body - contains image or iframe */
+        .gallery-modal-body {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            animation: contentZoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            /* Smooth zoom-in animation */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            /* Subtle rounded corners */
+            overflow: hidden;
+            /* Prevent content overflow beyond rounded corners */
+        }
+
+        /* Images in gallery modal */
+        .gallery-modal-body img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* Maintain aspect ratio while fitting viewport */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            /* Depth shadow */
+        }
+
+        /* Iframes in gallery modal (e.g., Vimeo embeds) */
+        .gallery-modal-body iframe {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+            /* Match modal body border radius */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            /* Depth shadow */
+        }
+
+        /* Close button styling for gallery modal */
+        .gallery-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            min-height: 48px;
+            /* Accessible touch target size */
+            border: none;
+            background-color: rgba(255, 255, 255, 0.15);
+            /* Subtle semi-transparent white */
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth color and scale transition */
+            z-index: 20;
+            /* Above content */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        /* Close button hover state */
+        .gallery-modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            /* More opaque white on hover */
+            transform: scale(1.1);
+            /* Subtle scale effect */
+        }
+
+        /* Close button focus state for keyboard navigation */
+        .gallery-modal-close:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.4);
+            /* Accessible focus ring with accent color */
+        }
+
+        /* Close button active/pressed state */
+        .gallery-modal-close:active {
+            transform: scale(0.95);
+            /* Press effect */
+        }
+
+        /* Close button SVG icon styling */
+        .gallery-modal-close svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+        }
+
+        /* ===================================
+           Content Zoom-In Animation
+           Smooth entrance transition for gallery content
+           ==================================== */
+        @keyframes contentZoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+                /* Start slightly smaller and transparent */
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+                /* Scale up and fade in to full size */
+            }
+        }
+
+        /* ===================================
+           Work Section Image Lightbox Modal
+           Minimal, reusable lightbox for .work section images only
+           ==================================== */
+
+        .work-image-modal {
+            position: fixed;
+            inset: 0;
+            /* Cover entire viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            /* Just below gallery/image modals */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth fade-in/fade-out */
+        }
+
+        /* Active state when modal is open */
+        .work-image-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Dark semi-transparent background backdrop */
+        .work-image-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            /* Semi-transparent dark overlay - adapts to light/dark theme */
+            backdrop-filter: blur(4px);
+            /* Subtle blur effect for depth */
+            transition: background-color 0.3s ease;
+        }
+
+        /* Modal content container with centered image */
+        .work-image-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            /* Responsive sizing relative to viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            /* Above backdrop */
+        }
+
+        /* Expanded image in modal */
+        .work-image-modal-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* Maintain aspect ratio while fitting viewport */
+            border-radius: 12px;
+            /* Subtle rounded corners */
+            animation: workImageZoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            /* Smooth zoom-in animation */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            /* Depth shadow */
+        }
+
+        /* Close button styling */
+        .work-image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            min-height: 48px;
+            /* Accessible touch target size */
+            border: none;
+            background-color: rgba(255, 255, 255, 0.15);
+            /* Subtle semi-transparent white */
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Smooth color and scale transition */
+            z-index: 20;
+            /* Above image */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        /* Close button hover state */
+        .work-image-modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            /* More opaque white on hover */
+            transform: scale(1.1);
+            /* Subtle scale effect */
+        }
+
+        /* Close button focus state for keyboard navigation */
+        .work-image-modal-close:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.4);
+            /* Accessible focus ring with accent color */
+        }
+
+        /* Close button active/pressed state */
+        .work-image-modal-close:active {
+            transform: scale(0.95);
+            /* Press effect */
+        }
+
+        /* Close button SVG icon styling */
+        .work-image-modal-close svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+        }
+
+        /* ===================================
+           Work Image Zoom-In Animation
+           Smooth entrance transition for expanded image
+           ==================================== */
+        @keyframes workImageZoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+                /* Start slightly smaller and transparent */
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+                /* Scale up and fade in to full size */
+            }
         }
 
         /* Contact section */
@@ -887,7 +1174,7 @@ nav {
             /* Subtle border for definition */
             border: 1px solid var(--section-divider);
             /* Soft shadow for depth elevation */
-            box-shadow: 0 8px 32px var(--section-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px var(--shadow-glow), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
         
@@ -1350,6 +1637,39 @@ nav {
             }
 
             .image-modal-close {
+                top: 15px;
+                right: 15px;
+                width: 44px;
+                height: 44px;
+                min-height: 44px;
+            }
+
+            /* Gallery modal responsive adjustments for tablet */
+            .gallery-modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .gallery-modal-body {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .gallery-modal-close {
+                top: 15px;
+                right: 15px;
+                width: 44px;
+                height: 44px;
+                min-height: 44px;
+            }
+
+            /* Work image modal responsive adjustments for tablet */
+            .work-image-modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .work-image-modal-close {
                 top: 15px;
                 right: 15px;
                 width: 44px;
