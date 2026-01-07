@@ -45,7 +45,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
+        <video id="heroVideo" class="hero-video" autoplay loop playsinline>
             <source src="assets/video_2026-01-04_08-40-00.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -133,128 +133,268 @@
         <div class="gallery-grid">
             <!-- Gallery Item 1 -->
             <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149467376?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Energy, Unscripted">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1149467376?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1"
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Energy, Unscripted">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title">Energy, Unscripted</h3>
                 <p class="video-category">Experience Coverage</p>
             </div>
 
             <!-- Gallery Item 2 -->
             <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149465491?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Moments Worth Keeping">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1149465491?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1" 
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Moments Worth Keeping">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title">Moments Worth Keeping</h3>
                 <p class="video-category">Event Coverage</p>
             </div>
 
             <!-- Gallery Item 3 -->
             <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149466142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Drone Photography">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1149466142?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1"
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Drone Photography">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title">Drone Photography</h3>
                 <p class="video-category">Aerial Cinematography</p>
             </div>
 
             <!-- Gallery Item 4 -->
             <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149466653?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Tourism & Travel">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1149466653?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1"
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Tourism & Travel">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title">Tourism & Travel</h3>
                 <p class="video-category">Destination Films</p>
             </div>
 
             <!-- Gallery Item 5 -->
             <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149463300?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Commercial Productions">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1149463300?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1" 
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Commercial Productions">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title">Commercial Productions</h3>
                 <p class="video-category">Corporate Videos</p>
             </div>
 
             <!-- Gallery Item 6 -->
             <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1149465138?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Corporate Videos">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1149465138?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1"
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Corporate Videos">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title">Corporate Videos</h3>
                 <p class="video-category">Professional Productions</p>
             </div>
 
              <!-- Gallery Item 7 -->
              <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1151265699?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
-                     frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Commercial Productions">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1151265699?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1" 
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Commercial Productions">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title"></h3>
                 <p class="video-category"></p>
             </div>
 
             
              <div class="gallery-item">
-                <iframe 
-                    src="https://player.vimeo.com/video/1151265887?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
-                    frameborder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    title="Commercial Productions">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1151265887?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1" 
+                        loading="lazy"
+                        frameborder="0" 
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        title="Commercial Productions">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title"></h3>
                 <p class="video-category"></p>
             </div>
 
             <div class="gallery-item">
-                <iframe
-                src="https://player.vimeo.com/video/1151557065?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                title="Commercial Productions">
-                </iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe
+                        src="https://player.vimeo.com/video/1151557065?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1"
+                        loading="lazy"
+                        frameborder="0"
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        title="Commercial Productions">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
                 <h3 class="video-title"></h3>
                 <p class="video-category"></p>
             </div>
 
             <div class="gallery-item">
-                <iframe 
-                src="https://player.vimeo.com/video/1151955889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" 
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                title="Commercial Productions">
-                ></iframe>
+                <div class="gallery-video-wrapper" style="position: relative; width: 100%; height: 100%;">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1151955889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;muted=1&amp;loop=1" 
+                        loading="lazy"
+                        frameborder="0"
+                        allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        title="Commercial Productions">
+                    </iframe>
+                    <button class="video-mute-btn gallery-mute" aria-label="Mute video" title="Mute/Unmute">
+                        <svg class="mute-icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a6.99 6.99 0 0 1 0 9.88M18.76 5.24a10.96 10.96 0 0 1 0 13.52"></path>
+                        </svg>
+                        <svg class="mute-icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <line x1="23" y1="9" x2="17" y2="15"></line>
+                            <line x1="17" y1="9" x2="23" y2="15"></line>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -262,7 +402,7 @@
     <!-- Footer -->
     <footer class="footer">
         © Dulai Films Limited. Ajah, Lagos.  <br>
-        Dulai Films  • CAC: BN1234567
+        Dulai Films  •  RC: 8749630
     </footer>
 
     <!-- Work Image Modal -->
@@ -294,6 +434,35 @@
 
     <!-- Scripts -->
     <script>
+        /* ===================================
+           Vimeo Performance Optimization
+           Defers video loading until viewport or user interaction
+           ================================== */
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        // Intersection Observer for lazy loading iframes
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target.querySelector('iframe');
+                    if (iframe && !iframe.src.includes('autoplay=1')) {
+                        // Video is visible, enable autoplay on next interaction
+                        iframe.addEventListener('click', function playOnClick() {
+                            this.src = this.src + '&autoplay=1';
+                            this.removeEventListener('click', playOnClick);
+                        }, { once: true });
+                    }
+                    videoObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '50px'
+        });
+
+        galleryItems.forEach(item => {
+            videoObserver.observe(item);
+        });
+
         /* ===================================
            Theme Toggle
            ================================== */
@@ -333,6 +502,121 @@
             document.addEventListener('DOMContentLoaded', initializeTheme);
         } else {
             initializeTheme();
+        }
+
+        /* ===================================
+           Video Mute Controls - Manage mute state across all videos
+           Handles both HTML5 videos and embedded Vimeo iframes
+           ================================== */
+        const VideoMuteModule = {
+            init() {
+                // Store mute state for videos (Vimeo iframes store mute in localStorage)
+                this.muteState = JSON.parse(localStorage.getItem('videoMuteState') || '{}');
+                
+                // Initialize all mute buttons
+                this.initMuteButtons();
+                
+                // Initialize hero video with mute state
+                this.initHeroVideo();
+            },
+            
+            initMuteButtons() {
+                const muteButtons = document.querySelectorAll('.video-mute-btn');
+                muteButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.toggleMute(button);
+                    });
+                    
+                    // Keyboard accessibility: Space and Enter keys
+                    button.addEventListener('keydown', (e) => {
+                        if (e.key === ' ' || e.key === 'Enter') {
+                            e.preventDefault();
+                            this.toggleMute(button);
+                        }
+                    });
+                });
+            },
+            
+            initHeroVideo() {
+                const heroVideo = document.getElementById('heroVideo');
+                const heroMuteBtn = document.getElementById('heroMuteBtn');
+                
+                if (!heroVideo) return;
+                
+                // Restore mute state from localStorage
+                const isMuted = this.muteState['hero'] !== false;
+                if (isMuted) {
+                    heroVideo.muted = true;
+                    if (heroMuteBtn) {
+                        heroMuteBtn.classList.add('is-muted');
+                    }
+                } else {
+                    heroVideo.muted = false;
+                    if (heroMuteBtn) {
+                        heroMuteBtn.classList.remove('is-muted');
+                    }
+                }
+            },
+            
+            toggleMute(button) {
+                // Find the nearest video element (could be HTML5 video or Vimeo iframe)
+                const videoWrapper = button.closest('.gallery-video-wrapper') || button.closest('section');
+                
+                if (!videoWrapper) return;
+                
+                const videoElement = videoWrapper.querySelector('video');
+                const iframeElement = videoWrapper.querySelector('iframe[src*="vimeo"]');
+                const heroVideo = document.getElementById('heroVideo');
+                
+                let targetVideo = null;
+                let videoId = null;
+                
+                // Determine which video element to mute and assign ID
+                if (videoElement && videoElement === heroVideo) {
+                    targetVideo = videoElement;
+                    videoId = 'hero';
+                } else if (videoElement) {
+                    targetVideo = videoElement;
+                    videoId = 'video-' + (videoElement.id || Math.random().toString(36).substr(2, 9));
+                } else if (iframeElement) {
+                    targetVideo = iframeElement;
+                    videoId = 'iframe-' + iframeElement.src.split('/').pop();
+                }
+                
+                if (!targetVideo) return;
+                
+                // Toggle mute state
+                const currentState = this.muteState[videoId] !== false;
+                this.muteState[videoId] = !currentState;
+                
+                // Apply mute to video element
+                if (videoElement) {
+                    videoElement.muted = !currentState;
+                }
+                
+                // For Vimeo iframes, we can't directly mute via JS due to CORS, 
+                // but we can track preference for UI state
+                
+                // Update button visual state
+                if (this.muteState[videoId] === true) {
+                    button.classList.add('is-muted');
+                } else {
+                    button.classList.remove('is-muted');
+                }
+                
+                // Save state to localStorage
+                localStorage.setItem('videoMuteState', JSON.stringify(this.muteState));
+            }
+        };
+
+        // Initialize mute controls when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                VideoMuteModule.init();
+            });
+        } else {
+            VideoMuteModule.init();
         }
 
         /* ===================================

@@ -62,15 +62,15 @@ html {
     --space-24: 6rem;       /* 96px */
 
     /* Dark Theme (Default) */
-    --color-bg-primary: #0a0e18;
-    --color-bg-secondary: #101420;
-    --color-bg-tertiary: #1a202c;
-    --color-bg-hover: #252f42;
+    --color-bg-primary: #0f1419;
+    --color-bg-secondary: #161d2a;
+    --color-bg-tertiary: #1e2534;
+    --color-bg-hover: #2a3447;
     
-    --color-text-primary: #f8fafc;
-    --color-text-secondary: #cbd5e1;
-    --color-text-tertiary: #94a3b8;
-    --color-text-disabled: #64748b;
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #d0d9e5;
+    --color-text-tertiary: #9ca5b5;
+    --color-text-disabled: #6f7a8a;
     
     --color-accent: #ef4444;          /* Red accent */
     --color-accent-hover: #dc2626;
@@ -115,15 +115,15 @@ html {
 
 /* Light Theme */
 body.light-theme {
-    --color-bg-primary: #f8fafc;
+    --color-bg-primary: #fafbfc;
     --color-bg-secondary: #ffffff;
-    --color-bg-tertiary: #f1f5f9;
-    --color-bg-hover: #e2e8f0;
+    --color-bg-tertiary: #f3f5f9;
+    --color-bg-hover: #e5ecf3;
     
-    --color-text-primary: #0f172a;
-    --color-text-secondary: #475569;
-    --color-text-tertiary: #64748b;
-    --color-text-disabled: #94a3b8;
+    --color-text-primary: #0c1117;
+    --color-text-secondary: #3d444d;
+    --color-text-tertiary: #57606a;
+    --color-text-disabled: #8a92a1;
     
     --color-accent: #ef4444;
     --color-accent-hover: #dc2626;
@@ -186,7 +186,17 @@ nav {
     height: 36px;
     width: auto;
     object-fit: contain;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), background var(--transition-base);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 18px;
+    padding: 4px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.light-theme .logo img {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.02));
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .logo img:hover {
@@ -330,6 +340,106 @@ nav {
 }
 
 /* ============================================================================
+   4.5 MUTE BUTTON CONTROLS
+   ============================================================================ */
+
+/* Mute button for videos */
+.video-mute-btn {
+    position: absolute;
+    bottom: var(--space-4);
+    right: var(--space-4);
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0;
+}
+
+.video-mute-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.video-mute-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.5);
+}
+
+.video-mute-btn:active {
+    transform: scale(0.95);
+}
+
+/* Mute button SVG icons */
+.video-mute-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Speaker icon (unmuted state) */
+.mute-icon-speaker {
+    display: block;
+}
+
+/* Muted icon (hidden by default) */
+.mute-icon-muted {
+    display: none;
+    position: absolute;
+}
+
+/* Show muted icon when button has muted class */
+.video-mute-btn.is-muted .mute-icon-speaker {
+    display: none;
+}
+
+.video-mute-btn.is-muted .mute-icon-muted {
+    display: block;
+}
+
+/* Gallery item mute button positioning */
+.gallery-item .video-mute-btn {
+    bottom: var(--space-4);
+    right: var(--space-4);
+}
+
+/* Hero section mute button */
+.hero .video-mute-btn {
+    bottom: var(--space-6);
+    right: var(--space-6);
+}
+
+/* Ensure mute button visibility in both themes */
+body .video-mute-btn {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body.light-theme .video-mute-btn {
+    background: rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+body.light-theme .video-mute-btn:hover {
+    background: rgba(0, 0, 0, 0.75);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================================================
    5. HERO SECTION
    ============================================================================ */
 
@@ -468,7 +578,7 @@ nav {
     position: absolute;
     inset: 0;
     padding: var(--space-6);
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 60%, rgba(0, 0, 0, 0.95) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.85) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -476,19 +586,22 @@ nav {
 }
 
 .video-title {
-    font-size: clamp(var(--font-size-sm), 3vw, var(--font-size-lg));
+    font-size: clamp(1rem, 3vw, 1.375rem);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text-primary);
+    color: #ffffff;
     margin-bottom: var(--space-2);
     line-height: var(--line-height-tight);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.3px;
 }
 
 .video-category {
-    font-size: var(--font-size-xs);
-    color: var(--color-accent);
+    font-size: 0.75rem;
+    color: #fbbf24;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     font-weight: var(--font-weight-medium);
+    opacity: 0.95;
 }
 
 /* ============================================================================
