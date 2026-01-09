@@ -187,7 +187,7 @@ nav {
     width: auto;
     object-fit: contain;
     transition: opacity var(--transition-fast), transform var(--transition-fast), background var(--transition-base);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72));
     border-radius: 18px;
     padding: 4px;
     backdrop-filter: blur(10px);
@@ -933,7 +933,52 @@ body.light-theme .video-mute-btn:hover {
 }
 
 /* ============================================================================
-   8. FOOTER
+   8. CLient section
+   ============================================================================ */
+
+   .clients {
+    padding: 4rem 1rem;
+    background: #0b0f14;
+   }
+   .clients-subtitle {
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #8a8f98;
+    margin-bottom: 2.5rem;
+   }
+
+   /* GRID */
+
+   .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem;
+    align-items: center;
+    justify-content: center;
+   }
+   .clients-grid img { 
+    max-height: 42px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 0.65;
+    transition: all 0.3s ease;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 8px;
+   }
+   .clients-grid img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+   }
+
+
+
+
+/* ============================================================================
+   9. FOOTER
    ============================================================================ */
 
 .footer {
@@ -949,7 +994,7 @@ body.light-theme .video-mute-btn:hover {
 }
 
 /* ============================================================================
-   9. MODALS & LIGHTBOXES
+   10. MODALS & LIGHTBOXES
    ============================================================================ */
 
 /* Work Section Image Modal */
@@ -1035,7 +1080,7 @@ body.light-theme .video-mute-btn:hover {
 }
 
 /* ============================================================================
-   10. ANIMATIONS
+   11. ANIMATIONS
    ============================================================================ */
 
 @keyframes fadeInUp {
@@ -1061,7 +1106,7 @@ body.light-theme .video-mute-btn:hover {
 }
 
 /* ============================================================================
-   11. RESPONSIVE DESIGN
+   12. RESPONSIVE DESIGN
    ============================================================================ */
 
 /* Tablet & Medium Devices */
@@ -1124,6 +1169,12 @@ body.light-theme .video-mute-btn:hover {
 
     .social-links {
         gap: var(--space-5);
+    }
+    .clients-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .clients-grid img {
+        max-height: 48px;
     }
 }
 
@@ -1195,5 +1246,10 @@ body.light-theme .video-mute-btn:hover {
 
     .form-title {
         font-size: var(--font-size-xl);
+    }
+
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
