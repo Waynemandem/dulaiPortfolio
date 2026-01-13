@@ -169,10 +169,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: var(--z-fixed);
-    background: linear-gradient(180deg, var(--color-bg-primary) 0%, rgba(10, 14, 24, 0.95) 100%);
+    background: var(--color-bg-primary);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border-light);
     transition: all var(--transition-base);
+    margin-bottom: 0;
+    padding-bottom: 0;
+
 }
 
 .logo {
@@ -476,18 +479,18 @@ body.light-theme .video-mute-btn:hover {
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     letter-spacing: -1px;
-    color: var(--color-text-primary);
+    color: black;
     margin-bottom: var(--space-4);
     text-transform: uppercase;
     word-spacing: 0.1em;
 }
 
 .hero p {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
+    font-size: bold;
+    color: black;
     margin-bottom: var(--space-10);
     line-height: var(--line-height-relaxed);
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-bold);
 }
 
 
@@ -507,6 +510,7 @@ body.light-theme .video-mute-btn:hover {
     cursor: pointer;
     border: none;
     min-height: 48px;
+    margin-bottom: 27px;
 }
 
 .cta-button:hover {
@@ -936,45 +940,75 @@ body.light-theme .video-mute-btn:hover {
    8. CLient section
    ============================================================================ */
 
-   .clients {
-    padding: 4rem 1rem;
-    background: #0b0f14;
-   }
-   .clients-subtitle {
+   /* SECTION */
+.clients {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.clients-subtitle {
+    margin-bottom: var(--space-6);
     text-align: center;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    color: #8a8f98;
-    margin-bottom: 2.5rem;
-   }
+    font-size: var(--font-size-lg);
+}
 
-   /* GRID */
+/* GRID WRAPPER */
+.clients-grid {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-   .clients-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.2rem;
-    align-items: center;
-    justify-content: center;
-   }
-   .clients-grid img { 
-    max-height: 42px;
-    width: auto;
-    max-width: 100%;
-    margin: 0 auto;
-    opacity: 0.65;
-    transition: all 0.3s ease;
-    background: #fff;
-    padding: 0.5rem;
-    border-radius: 8px;
-   }
-   .clients-grid img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-   }
+/* MOVING TRACK */
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: logo-scroll 25s linear infinite;
+}
 
+/* EACH LOGO CARD */
+.client-card {
+  flex: 0 0 auto;
+  min-width: 120px;
+  text-align: center;
+}
 
+/* LOGO IMAGE */
+.client-card img {
+  max-width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+/* TEXT UNDER LOGO */
+.client-card p {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #777;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ANIMATION */
+@keyframes logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* OPTIONAL: pause on hover (premium touch) */
+.clients:hover .carousel-track {
+  animation-play-state: paused;
+}
 
 
 /* ============================================================================

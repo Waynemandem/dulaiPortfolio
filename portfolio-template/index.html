@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags - Customize for each client -->
+    <meta name="description" content="Professional portfolio showcasing high-quality creative work and services. Custom design and production expertise.">
+    <meta name="theme-color" content="#000000">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Creative Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing high-quality creative work and services.">
+    
+    <title>Creative Portfolio | Professional Services</title>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon Placeholders - Replace with client logo -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+</head>
+<body>
+    <!-- ========================================
+        NAVIGATION BAR
+        - Fixed positioning for persistent access
+        - Logo, nav links, theme toggle, mobile menu
+        ======================================== -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-text">PORTFOLIO</span>
+                <!-- Or use: <img src="assets/logo.png" alt="Logo"> -->
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button 
+                class="hamburger" 
+                id="hamburgerBtn"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="nav-links" id="navLinks">
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                
+                <!-- Theme Toggle Button -->
+                <button 
+                    class="theme-toggle" 
+                    id="themeToggle"
+                    aria-label="Toggle dark and light theme"
+                    title="Toggle theme">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+        HERO SECTION
+        - Outcome-driven headline
+        - Clear CTA button
+        - Entrance animation
+        ======================================== -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in-up">
+                <!-- CUSTOMIZE: Headline should focus on client value/outcomes -->
+                <h1 class="hero-headline">
+                    Bringing Ideas to Life
+                    <span class="highlight">with Excellence</span>
+                </h1>
+                <p class="hero-subtitle">
+                    We create compelling visual experiences that elevate your brand and drive meaningful results.
+                </p>
+                <!-- Primary CTA -->
+                <a href="#contact" class="cta-primary">Start Your Project</a>
+            </div>
+            
+            <!-- Hero Background (customize with client hero image or gradient) -->
+            <div class="hero-background"></div>
+        </div>
+    </section>
+
+    <!-- ========================================
+        SERVICES SECTION
+        - Benefit-driven copy
+        - Card layout with hover motion
+        - Staggered entrance animation
+        ======================================== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What We Offer</h2>
+                <p>Comprehensive solutions tailored to your needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 - CUSTOMIZE per client -->
+                <div class="service-card fade-in-up" style="--delay: 0s">
+                    <div class="service-icon">✦</div>
+                    <h3>Strategy & Planning</h3>
+                    <p>Develop clear direction and actionable plans to achieve your goals.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card fade-in-up" style="--delay: 0.1s">
+                    <div class="service-icon">◆</div>
+                    <h3>Creative Design</h3>
+                    <p>Beautiful, functional design that captivates and converts.</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card fade-in-up" style="--delay: 0.2s">
+                    <div class="service-icon">▲</div>
+                    <h3>Full Execution</h3>
+                    <p>From concept to delivery, we handle every detail with precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+        PROJECTS SECTION
+        - Improved project card layout
+        - Hover overlay with details
+        - Responsive image handling
+        - Scroll reveal animations
+        ======================================== -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Featured Projects</h2>
+                <p>Showcasing our best work across different industries</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project Card 1 - CUSTOMIZE: Replace with client projects -->
+                <div class="project-card fade-in-up">
+                    <div class="project-image-wrapper">
+                        <img 
+                            src="assets/project-1.jpg" 
+                            alt="Project 1 - Strategic Campaign"
+                            class="project-image"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-details">
+                                <h3>Strategic Campaign</h3>
+                                <p>Digital marketing strategy that increased engagement by 150%</p>
+                                <a href="#" class="overlay-link">View Project →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Strategic Campaign</h3>
+                        <p class="project-category">Marketing</p>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="project-card fade-in-up">
+                    <div class="project-image-wrapper">
+                        <img 
+                            src="assets/project-2.jpg" 
+                            alt="Project 2 - Brand Identity"
+                            class="project-image"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-details">
+                                <h3>Brand Identity</h3>
+                                <p>Complete brand redesign with visual consistency across platforms</p>
+                                <a href="#" class="overlay-link">View Project →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Brand Identity</h3>
+                        <p class="project-category">Branding</p>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="project-card fade-in-up">
+                    <div class="project-image-wrapper">
+                        <img 
+                            src="assets/project-3.jpg" 
+                            alt="Project 3 - Web Development"
+                            class="project-image"
+                            loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-details">
+                                <h3>Web Development</h3>
+                                <p>High-performance website that improved conversion rates by 200%</p>
+                                <a href="#" class="overlay-link">View Project →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Web Development</h3>
+                        <p class="project-category">Web Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+        ABOUT SECTION
+        - Brief company/creator overview
+        - Benefits-focused messaging
+        - Stats or achievements (optional)
+        ======================================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in-up">
+                    <h2>About Us</h2>
+                    <p>
+                        We're a team of creative professionals dedicated to delivering exceptional results. 
+                        With years of experience across multiple industries, we understand what it takes to 
+                        stand out in a competitive landscape.
+                    </p>
+                    <p>
+                        Every project is an opportunity to exceed expectations. We combine strategic thinking 
+                        with creative excellence to produce work that not only looks great but drives real business value.
+                    </p>
+                    <!-- Stats (customize per client) -->
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+        CONTACT SECTION
+        - Contact form
+        - Social links
+        - Call-to-action
+        ======================================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-header fade-in">
+                <h2>Let's Work Together</h2>
+                <p>Ready to bring your vision to life? Get in touch today.</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm" method="POST">
+                    <div class="form-group fade-in-up">
+                        <label for="name">Your Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Full name"
+                            required
+                            aria-required="true">
+                    </div>
+
+                    <div class="form-group fade-in-up">
+                        <label for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="your@email.com"
+                            required
+                            aria-required="true">
+                    </div>
+
+                    <div class="form-group fade-in-up">
+                        <label for="subject">Subject</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="Project inquiry"
+                            required
+                            aria-required="true">
+                    </div>
+
+                    <div class="form-group fade-in-up">
+                        <label for="message">Message</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Tell us about your project..."
+                            rows="6"
+                            required
+                            aria-required="true"></textarea>
+                    </div>
+
+                    <button type="submit" class="cta-primary" aria-label="Send message">Send Message</button>
+                    
+                    <!-- Form Status Messages -->
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+                
+                <!-- Social Links -->
+                <div class="social-section fade-in-up">
+                    <p class="social-label">Connect With Us</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37"></path>
+                                <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+        FOOTER
+        ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+            <p>Crafted with precision and care.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+        SCRIPTS
+        ======================================== -->
+    <script src="main.js"></script>
+</body>
+</html>
